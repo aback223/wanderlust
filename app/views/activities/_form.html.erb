@@ -1,21 +1,21 @@
-<div class="field">
-  <%= f.text_field :title, placeholder: "Title" %>
+<div class="row">
+  <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
 </div>
 <br>
-<div class="field">
-  <%= f.select :activity_type, ['Food', 'Activity'] %>
+<div class="row">
+  <%= f.select :activity_type, options_for_select(['Food', 'Activity']), {}, class: "form-control" %>
 </div>
 <br>
-<div class="field">
-  <%= f.text_field :address, placeholder: "Address" %>
+<div class="row">
+  <%= f.text_field :address, placeholder: "Address", class: "form-control" %>
 </div>
 <br>
-<div class="field">
-  <%= f.text_field :url, placeholder: "URL" %>
+<div class="row">
+  <%= f.text_field :url, placeholder: "URL", class: "form-control" %>
 </div>
 <br>
-<div class="field">
-  Notes:<br><%= f.text_area :notes %>
+<div class="row">
+  Notes:<br><%= f.text_area :notes, class: "form-control" %>
 </div>
 <br>
 <div class="actions">

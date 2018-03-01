@@ -1,4 +1,6 @@
-<h2>Add Activity</h2><br>
-<%= form_for ([@day, @activity]) do |f| %>
-  <%= render partial: 'form', locals: { f: f, submit_text: "Create Activity"} %>
-<% end %>
+<div class="form-container text-center">
+  <h2>Add Activity</h2><br>
+  <%= form_for ([@day, @activity]) do |f| %>
+    <%= render partial: 'form', locals: { f: f, submit_text: "Create Activity"} %>
+  <% end %>
+</div>
