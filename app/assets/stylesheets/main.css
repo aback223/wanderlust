@@ -25,6 +25,14 @@ p, .lead, .navbar-nav a, .navbar-nav-2 a, .breadcrumb {
   width: 45%;
 }
 
+.fa-times {
+  color: red;
+}
+
+.fa-edit, .fa-trash-alt, .plus-activity {
+  color: #3498DB;
+}
+
 .pic-thumbnail {
   height: 100px;
 }

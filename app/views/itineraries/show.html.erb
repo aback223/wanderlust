@@ -17,9 +17,7 @@
         <% @days.each do |day| %>
           <h3><%= link_to "#{day.title} - #{day.date.strftime("%m/%d/%Y")}", itinerary_day_path(@itinerary, day) %></h3>
           <% if itinerary_belongs_to_user(current_user) %>
-            <%=link_to "Edit", edit_itinerary_day_path(@itinerary, day), class: "btn btn-sm btn-primary" %>
-            <%= link_to "Delete", itinerary_day_path(@itinerary, day), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-primary" %>
-            <%= link_to "Add Activity", new_day_activity_path(day), class: "btn btn-sm btn-primary" %>
+            <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_itinerary_day_path(@itinerary, day), class: "btn btn-sm" %><%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, itinerary_day_path(@itinerary, day), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm" %><%= link_to '<i class="fas fa-plus plus-activity"></i>&nbsp;Add Activity'.html_safe, new_day_activity_path(day), class: "btn btn-sm" %>
             <br><br>
           <% end %>
           <% day.activities.each do |a| %>

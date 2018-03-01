@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,600,700' rel='stylesheet' type='text/css'>
-
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
 
@@ -25,7 +25,8 @@
         </div>
         <div class="col-xs-6 signin text-right navbar-nav-2">
           <% if user_signed_in? %>
-            <%=link_to "Plan New Trip", new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
+
+            <%=link_to '<i class="fas fa-plus"></i> Add Trip'.html_safe, new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
             <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
           <% else %>
