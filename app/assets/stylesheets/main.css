@@ -25,6 +25,12 @@ p, .lead, .navbar-nav a, .navbar-nav-2 a, .breadcrumb {
   width: 45%;
 }
 
+.trip-container {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+}
+
 .fa-times {
   color: red;
 }

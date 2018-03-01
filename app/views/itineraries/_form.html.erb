@@ -1,15 +1,15 @@
 <div class="form-row">
   <div class="form-group-lg col-xl-6">
-    <%= f.text_field :trip_title, placeholder: "Title", class: "form-control" %><br />
+    <%= f.text_field :trip_title, placeholder: "Add A Title", class: "form-control" %><br />
   </div>
 </div>
 <div class="form-row form-group-lg">
   <div class="col">
-    <%= f.label :datestart, "Date Start" %>:
+    <h4><%= f.label :datestart, "Date Start" %>:</h4>
     <%= f.date_field :datestart, class: "form-control" %><br>
   </div>
   <div class="col">
-    <%= f.label :dateend, "Date End" %>:
+    <h4><%= f.label :dateend, "Date End" %>:</h4>
     <%= f.date_field :dateend, class: "form-control" %>
   </div>
 </div>
@@ -18,7 +18,7 @@
 <h3>Add some pics!</h3>
   <%= f.fields_for :images do |image| %>
     <%= image.label :url,"Link:" %>
-    <%= image.text_field :url %><br>
+    <%= image.text_field :url, placeholder: ".gif, .jpg, or .png" %><br>
   <% end %>
 </div>
 <br>
