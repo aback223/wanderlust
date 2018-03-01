@@ -14,6 +14,6 @@
 <% if @user == current_user %>
   <div class="container buttons">
     <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_activity_path(@activity), class: "btn btn-sm" %>
-    <%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, activity_path(@activity), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm" %>
+    <%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, activity_path(@activity), method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-sm" %>
   </div>
 <% end %>

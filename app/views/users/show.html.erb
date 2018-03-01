@@ -12,7 +12,7 @@
         <% @user.itineraries.each do |i| %>
           <h4><%= link_to "#{i.datestart.strftime("%m/%d/%Y")} - #{i.trip_title}", user_itinerary_path(@user, i) %>
             <% if current_user.itineraries.include?(i) %>
-              <strong><%= link_to '<i class="fas fa-times"></i>'.html_safe, user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure?"} %></strong></h4>
+              <strong><%= link_to '<i class="fas fa-times"></i>'.html_safe, user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></strong></h4>
             <% else %>
             <br>
             <% end %><br>
