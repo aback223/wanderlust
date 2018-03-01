@@ -1,8 +1,12 @@
-<div class="field">
-  <%= f.text_field :title, placeholder: "ie. Day One"%>
+<div class="form-row form-group-lg">
+  <div class="col">
+  <%= f.text_field :title, placeholder: "ie. Day One", class: "form-control"%><br>
+  </div>
 </div>
-<div class="field">
-  <%= f.date_field :date%>
+<div class="form-row form-group-lg">
+  <div class="col">
+  <%= f.date_field :date, class: "form-control" %>
+  </div>
 </div>
 <br>
 <div class="actions">
