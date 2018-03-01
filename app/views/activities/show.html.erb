@@ -3,17 +3,15 @@
   <li class="breadcrumb-item in-active"><%= @activity.day.title %> - <%= @activity.day.date.strftime("%m/%d/%Y")%>
 </ol>
 
-<h2><%= @activity.title %></h2>
-<ul>
-  <li><strong>Activity Type: </strong><%= @activity.activity_type %></li>
-  <li><strong>Address: </strong><%= @activity.address %></li>
-  <li><strong>URL: </strong><%= @activity.url %></li>
-  <li><strong>Notes: </strong><%= @activity.notes %></li>
-</ul>
+<div class="form-container text-center activity-show">
+<h2><%= @activity.title %></h2><br>
+  <strong>Activity Type: </strong><%= @activity.activity_type %><br><br>
+  <strong>Address: </strong><%= @activity.address %><br><br>
+  <strong>URL: </strong><%= @activity.url %><br><br>
+  <strong>Notes: </strong><%= @activity.notes %><br><br>
 
 <% if @user == current_user %>
-  <div class="container buttons">
-    <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_activity_path(@activity), class: "btn btn-sm" %>
-    <%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, activity_path(@activity), method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-sm" %>
-  </div>
+  <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_activity_path(@activity), class: "btn btn-md" %>
+  <%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, activity_path(@activity), method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-md" %>
 <% end %>
+</div>

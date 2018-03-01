@@ -31,6 +31,10 @@ p, .lead, .navbar-nav a, .navbar-nav-2 a, .breadcrumb {
   width: 30%;
 }
 
+.activity-show {
+  font-size: 20px;
+}
+
 .fa-times {
   color: red;
 }
