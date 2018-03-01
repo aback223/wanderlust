@@ -25,7 +25,9 @@
         </div>
         <div class="col-xs-6 signin text-right navbar-nav-2">
           <% if user_signed_in? %>
-            <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            <%=link_to "Plan New Trip", new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
+            <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
           <% else %>
              <%= link_to "Sign Up", register_path %>&nbsp; &nbsp;<%=link_to "Sign In", login_path %>
           <% end %>
