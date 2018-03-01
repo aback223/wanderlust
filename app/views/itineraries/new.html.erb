@@ -1,17 +1,19 @@
-<h2>New Trip</h2>
+<div class="form-container text-center">
+  <h2>New Trip</h2>
 
-<%= form_for(@itinerary, url: user_itineraries_path(current_user), method: :post) do |f| %>
-  <%= render partial: 'form', locals: { f: f } %>
-<% end %>
-<br>
-<% if !@errors.nil? %>
-  <div class="error">
-      <label><%= pluralize(@errors.count, "error") %> prohibited this pin from
-      being saved:</label>
-    <ul>
-      <% @errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>  
-  </div>  
-<% end %>
+  <%= form_for(@itinerary, url: user_itineraries_path(current_user), method: :post) do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+  <% end %>
+  <br>
+  <% if !@errors.nil? %>
+    <div class="error">
+        <label><%= pluralize(@errors.count, "error") %> prohibited this pin from
+        being saved:</label>
+      <ul>
+        <% @errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>  
+    </div>  
+  <% end %>
+</div>

@@ -1,22 +1,28 @@
-<div class="field">
-  <%= f.text_field :trip_title, placeholder: "Title" %>
+<div class="form-row">
+  <div class="form-group-lg col-xl-6">
+    <%= f.text_field :trip_title, placeholder: "Title", class: "form-control" %><br />
+  </div>
 </div>
-<div class="field">
-  <%= f.label :datestart, "Date Start" %>:
-  <%= f.date_field :datestart %>
+<div class="form-row">
+  <div class="form-group-lg col-xl-3">
+    <%= f.label :datestart, "Date Start" %>:
+    <%= f.date_field :datestart, class: "form-control" %><br />
+  </div>
+  <div class="form-group-lg col-xl-3">
+    <%= f.label :dateend, "Date End" %>:
+    <%= f.date_field :dateend, class: "form-control" %>
+  </div>
 </div>
-<div class="field">
-  <%= f.label :dateend, "Date End" %>:
-  <%= f.date_field :dateend %>
-</div>
+
 
 <div class="field">
 <h3>Add some pics!</h3>
   <%= f.fields_for :images do |image| %>
-    <%= image.label :url, "Link:" %>
+    <%= image.label :url,"Link:" %>
     <%= image.text_field :url %><br>
   <% end %>
 </div>
+<br>
 <div class="actions">
   <%= f.submit "Create Trip", class: 'btn btn-sm btn-primary' %>
 </div>
