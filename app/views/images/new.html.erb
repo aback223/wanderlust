@@ -3,9 +3,11 @@
   <li class="breadcrumb-item in-active">Add Image</li>
 </ol>
 
-<h2>Add Image</h2>
-<div class="imageForm">
-  <%= form_for [@itinerary, @image], url: itinerary_images_path(@image.itinerary) do |f| %>
-    <%= render partial: 'form', locals: { f: f } %>
-  <% end %>
+<div class="form-container text-center">
+  <h2>Add Image</h2><br>
+  <div class="imageForm">
+    <%= form_for [@itinerary, @image], url: itinerary_images_path(@image.itinerary) do |f| %>
+      <%= render partial: 'form', locals: { f: f } %>
+    <% end %>
+  </div>
 </div>
