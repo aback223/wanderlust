@@ -11,11 +11,11 @@
 /* ==========================================================================
    Global styles
    ========================================================================== */
-h1, h2, h3, h4, h5, h6, p, .btn, .navbar-nav a, .navbar-nav-2 a, .form-control, .list-inline, small{
+h1, h2, h3, h4, h5, h6, p, .btn, .form-control, .list-inline, small{
   font-family: 'Montserrat', sans-serif;
 }
 
-p, .lead {
+p, .lead, .navbar-nav a, .navbar-nav-2 a, .breadcrumb {
   font-family: 'Raleway', sans-serif;
 }
 
