@@ -8,21 +8,16 @@
     <div class="col-xs-3"></div>
     <div class="col-xs-5">
       <div class="text-center">
-      <h2>Trips</h2>
-        <% if @user == current_user %>
-          <%=link_to "Plan New Trip", new_user_itinerary_path(current_user.id), class: "btn btn-sm btn-primary" %><br><br>
+       <h2>Trips</h2><br>
+        <% @user.itineraries.each do |i| %>
+          <h4><%= link_to "#{i.datestart.strftime("%m/%d/%Y")} - #{i.trip_title}", user_itinerary_path(@user, i) %>
+            <% if current_user.itineraries.include?(i) %>
+              <strong><%= link_to "Delete", user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure?"} %></strong></h4>
+            <% else %>
+            <br>
+            <% end %><br>
         <% end %>
       </div>
-      <ul>
-        <% @user.itineraries.each do |i| %>
-          <li>
-            <%= link_to i.trip_title, user_itinerary_path(@user, i) %>
-              <% if current_user.itineraries.include?(i) %>
-                <strong><%= link_to "Delete", user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure?"} %></strong>
-              <% end %>
-          </li>
-        <% end %>
-      </ul>
     </div>
     <div class="col-xs-4 text-center">
       <h4><strong>Upcoming Trips</strong></h4>
@@ -30,7 +25,6 @@
           <% @upcoming_trips.each do |p| %>
             <%= link_to "#{p.datestart.strftime("%m/%d/%Y")} - #{p.trip_title}", user_itinerary_path(current_user, p) %><br>
           <% end %>
-        </ul>
       <% else %>
         <p>You haven't made any plans yet!</p>
       <% end %>
