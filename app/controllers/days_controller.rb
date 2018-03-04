@@ -12,7 +12,8 @@ class DaysController < ApplicationController
     if @day.save
       redirect_to itinerary_path(params[:itinerary_id])
     else
-      redirect_to new_itinerary_day_path
+      @errors = @day.errors
+      render :new
     end
   end
 
