@@ -9,7 +9,7 @@ class Day < ApplicationRecord
   def within_date_range
     itinerary = Itinerary.find_by_id(self.itinerary_id)
     if date < itinerary.datestart || date > itinerary.dateend
-      errors.add(:date, "not within trip date range")
+      errors.add(:date, "must be in the range: #{itinerary.datestart.strftime("%m/%d/%Y")} - #{itinerary.dateend.strftime("%m/%d/%Y")}")
     end
   end
 end
