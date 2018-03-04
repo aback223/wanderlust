@@ -1,5 +1,9 @@
 class DaysController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @itinerary = Itinerary.find(params[:itinerary_id])
+    redirect_to itinerary_path(@itinerary)
+  end
 
   def new
     @day = Day.new
