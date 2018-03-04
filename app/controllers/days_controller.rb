@@ -39,7 +39,7 @@ class DaysController < ApplicationController
 
   def destroy
     @day = Day.find(params[:id])
-    user = @day.itinerary.user[0]
+    user = @day.itinerary.users[0]
     if user == current_user
       @day.destroy
       redirect_to itinerary_path(@day.itinerary)
