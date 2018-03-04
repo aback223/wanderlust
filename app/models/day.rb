@@ -4,7 +4,7 @@ class Day < ApplicationRecord
   validates :date, presence: true
   validates :date, uniqueness: true
   validates :title, presence: true
-  validate :within_date_range
+  validate :within_date_range, if: :date?
 
   def within_date_range
     itinerary = Itinerary.find_by_id(self.itinerary_id)
