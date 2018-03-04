@@ -8,14 +8,14 @@
   <div class="row">
     <div class="col-xs-7">
       <h2><%=@itinerary.trip_title%></h2>
-      <h5><strong>Trip Date:</strong> <%= @itinerary.datestart.strftime("%m/%d/%Y") %> - <%= @itinerary.dateend.strftime("%m/%d/%Y") %></h5>
+      <h5><strong>Trip Date:</strong> <%= show_date(@itinerary.datestart) %> - <%= show_date(@itinerary.dateend) %></h5>
       <% if itinerary_belongs_to_user(current_user) %>
         <%=link_to "Plan A Day", new_itinerary_day_path(@itinerary), class: "btn btn-sm btn-primary" %>
         <%= link_to "Add More Images", new_itinerary_image_path(@itinerary), class: "btn btn-sm btn-primary" %>
       <% end %>
       <% if @days %>
         <% @days.each do |day| %>
-          <h3><%= link_to "#{day.title} - #{day.date.strftime("%m/%d/%Y")}", itinerary_day_path(@itinerary, day) %></h3>
+          <h3><%= link_to "#{day.title} - #{show_date(day.date)}", itinerary_day_path(@itinerary, day) %></h3>
           <% if itinerary_belongs_to_user(current_user) %>
             <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_itinerary_day_path(@itinerary, day), class: "btn btn-sm" %><%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, itinerary_day_path(@itinerary, day), method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-sm" %><%= link_to '<i class="fas fa-plus plus-activity"></i>&nbsp;Add Activity'.html_safe, new_day_activity_path(day), class: "btn btn-sm" %>
             <br><br>

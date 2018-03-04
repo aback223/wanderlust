@@ -10,7 +10,7 @@
       <div class="text-center">
        <h2>Trips</h2><br>
         <% @user.itineraries.each do |i| %>
-          <h4><%= link_to "#{i.datestart.strftime("%m/%d/%Y")} - #{i.trip_title}", user_itinerary_path(@user, i) %>
+          <h4><%= link_to "#{show_date(i.datestart)} - #{i.trip_title}", user_itinerary_path(@user, i) %>
             <% if current_user.itineraries.include?(i) %>
               <strong><%= link_to '<i class="fas fa-times"></i>'.html_safe, user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></strong></h4>
             <% else %>
@@ -22,8 +22,8 @@
     <div class="col-xs-4 text-center">
       <h4><strong>Upcoming Trips</strong></h4>
       <% if @upcoming_trips %>
-          <% @upcoming_trips.each do |p| %>
-            <%= link_to "#{p.datestart.strftime("%m/%d/%Y")} - #{p.trip_title}", user_itinerary_path(current_user, p) %><br>
+          <% @upcoming_trips.each do |trip| %>
+            <%= link_to "#{show_date(trip.datestart)} - #{trip.trip_title}", user_itinerary_path(current_user, trip) %><br>
           <% end %>
       <% else %>
         <p>You haven't made any plans yet!</p>

@@ -18,6 +18,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @itinerary = @activity.day.itinerary
     @user = @itinerary.users[0]
+    @day = @activity.day
   end
 
   def edit

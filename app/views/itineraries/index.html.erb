@@ -2,6 +2,6 @@
 <h2>Latest Updates</h2>
 <br>
 <% @itineraries.reverse.each do |i| %>
-<h4><%= link_to "#{i.trip_title} by: #{i.users[0].firstname} on #{i.created_at.strftime("%m/%d/%Y")}", itinerary_path(i)%></h4><br>
+<h4><%= link_to "#{i.trip_title} by: #{i.users[0].firstname} on #{show_date(i.created_at)}", itinerary_path(i)%></h4><br>
 <% end %>
 </div>
