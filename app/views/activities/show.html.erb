@@ -5,7 +5,10 @@
 
 <div class="form-container text-center activity-show">
 <h2><%= @activity.title %></h2><br>
-  <strong>Activity Type: </strong><%= @activity.activity_type %><br><br>
+  <strong>Activity Type: </strong>
+    <% @activity.categories.each do |c| %>
+      <%= "#{c.name}"%><%= showCategories(c) %>
+    <% end %><br><br>
   <strong>Address: </strong><%= @activity.address %><br><br>
   <strong>URL: </strong><%= link_to "#{@activity.url}", @activity.url %><br><br>
   <strong>Notes: </strong><%= @activity.notes %><br><br>
