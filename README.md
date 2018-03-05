@@ -1,7 +1,7 @@
-# README
+# Wanderlust
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Description
+Wanderlust is a web app that allows you to create and plan your trips with your friends. 
 
 Things you may want to cover:
 
