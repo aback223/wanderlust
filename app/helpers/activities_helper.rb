@@ -1,8 +1,8 @@
 module ActivitiesHelper
   def list_helper(c, object)
     if object
-      if c != object.categories.last && c.name.present?
-        ","
+      if !c.name.empty?
+        "."
       end
     end
   end

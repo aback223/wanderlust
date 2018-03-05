@@ -6,7 +6,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @day = Day.find(params[:day_id])
-    @activity = @day.activities.create(activity_params)
+    @activity = @day.activities.new(activity_params)
     if @activity.save
       redirect_to itinerary_path(@day.itinerary)
     else
