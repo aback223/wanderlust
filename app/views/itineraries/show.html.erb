@@ -33,12 +33,14 @@
       <h3>Images</h3>
       <% if @itinerary.images %>
         <% @itinerary.images.each do |image| %>
-          <div class="img-thumbnail text-right">
-            <% if itinerary_belongs_to_user(current_user) %>
-              <strong><%= link_to "Delete", itinerary_image_path(@itinerary, image), method: :delete, data: {confirm: "Are you sure?" } %></strong><br>
-            <% end %>
-            <%if !image.url.empty? %><%= link_to image_tag("#{image.url}", class: "pic-thumbnail"), image.url %><% end %>
-          </div>
+          <%if !image.url.empty? %>
+            <div class="img-thumbnail text-right">
+              <% if itinerary_belongs_to_user(current_user) %>
+                <strong><%= link_to "Delete", itinerary_image_path(@itinerary, image), method: :delete, data: {confirm: "Are you sure?" } %></strong><br>
+              <% end %>
+              <%= link_to image_tag("#{image.url}", class: "pic-thumbnail"), image.url %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div> <!--col-xs-5-->
