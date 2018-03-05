@@ -3,7 +3,10 @@
 </div>
 <br>
 <div class="row">
-  <%= f.select :activity_type, options_for_select(['Food', 'Activity']), {}, class: "form-control" %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <%= f.fields_for :categories, @activity.categories.build do |categories_fields| %>
+    <%= categories_fields.text_field :name, placeholder: "Category ie. Food or Activity", class: "form-control" %>
+  <% end %>
 </div>
 <br>
 <div class="row">
