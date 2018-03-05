@@ -1,4 +1,4 @@
 class ActivityCategory < ActiveRecord::Base
-  has_many :activities
-  has_many :categories
+  belongs_to :activities
+  belongs_to :categories
 end
