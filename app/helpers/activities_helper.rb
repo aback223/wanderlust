@@ -1,5 +1,5 @@
 module ActivitiesHelper
-  def showCategories(c, object)
+  def list_helper(c, object)
     if object
       if c != object.categories.last && c.name.present?
         ","
