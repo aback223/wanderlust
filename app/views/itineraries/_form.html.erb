@@ -28,11 +28,11 @@
 
 <br>
 <% if !@errors.nil? %>
-  <% grab_messages %>
+  <ul>
     <div class="error">
         <label><%= pluralize(@errors.count, "error") %> prohibited this pin from
         being saved:</label>
-      <ul>
+        <%= image_errors_if_exists %>
         <% @errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>

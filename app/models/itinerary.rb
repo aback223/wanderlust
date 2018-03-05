@@ -4,9 +4,7 @@ class Itinerary < ApplicationRecord
   has_many :invites
   has_many :images
   has_many :days
-  accepts_nested_attributes_for :images
   validates :trip_title, presence: true
-  validates_associated :images
   
   def images_attributes=(images_attributes)
     images_attributes.values.each do |image_attributes|
