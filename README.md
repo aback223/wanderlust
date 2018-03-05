@@ -1,9 +1,9 @@
 # Wanderlust
 
-##Description
+## Description
 Wanderlust is a web app that allows you to create and plan your trips with your friends. 
 
-##Installation Guide
+## Installation Guide
 
 Clone the repo and then install the needed gems locally:
 
