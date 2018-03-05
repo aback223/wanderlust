@@ -1,2 +1,0 @@
-class ToDoList < ApplicationRecord
-end
