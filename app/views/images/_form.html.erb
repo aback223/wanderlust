@@ -5,3 +5,16 @@
 <div class="actions">
   <%= f.submit class: 'btn btn-sm btn-primary' %>
 </div>
+
+<br>
+<% if !@errors.nil? %>
+  <div class="error">
+      <label><%= pluralize(@errors.count, "error") %> prohibited this pin from
+      being saved:</label>
+    <ul>
+      <% @errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>  
+  </div>  
+<% end %>

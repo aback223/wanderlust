@@ -10,6 +10,7 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to itinerary_path(itinerary)
     else
+      @errors = @image.errors
       render :new
     end
   end
