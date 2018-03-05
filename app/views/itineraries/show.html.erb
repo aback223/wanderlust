@@ -22,7 +22,12 @@
           <% end %>
           <% day.activities.each do |a| %>
             <ul>
-              <li><%= link_to "#{a.title} [#{a.activity_type}]", day_activity_path(day, a) %></li>
+              <li>
+                <%= link_to "#{a.title}", day_activity_path(day, a) %>
+                [<% a.categories.each do |c| %>
+                <%= c.name %><%=list_helper(c, a)%>
+              <% end %>]
+              </li>
             </ul>
           <% end %>
         <% end %>
