@@ -1,7 +1,7 @@
 module ActivitiesHelper
-  def showCategories(c)
-    if @activity
-      if c != @activity.categories.last && c.name.present?
+  def showCategories(c, object)
+    if object
+      if c != object.categories.last && c.name.present?
         ","
       end
     end

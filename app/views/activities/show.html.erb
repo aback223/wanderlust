@@ -7,7 +7,7 @@
 <h2><%= @activity.title %></h2><br>
   <strong>Activity Type: </strong>
     <% @activity.categories.each do |c| %>
-      <%= "#{c.name}"%><%= showCategories(c) %>
+      <%= "#{c.name}"%><%= showCategories(c, @activity) %>
     <% end %><br><br>
   <strong>Address: </strong><%= @activity.address %><br><br>
   <strong>URL: </strong><%= link_to "#{@activity.url}", @activity.url %><br><br>
