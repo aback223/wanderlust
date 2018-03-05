@@ -5,11 +5,12 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    day = Day.find(params[:day_id])
-    activity = day.activities.create(activity_params)
-    if activity.save
-      redirect_to itinerary_path(day.itinerary)
+    @day = Day.find(params[:day_id])
+    @activity = @day.activities.create(activity_params)
+    if @activity.save
+      redirect_to itinerary_path(@day.itinerary)
     else
+      @errors = @activity.errors
       render :new
     end
   end
