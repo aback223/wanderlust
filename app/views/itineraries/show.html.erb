@@ -25,9 +25,11 @@
               <ul>
                 <li>
                   <%= link_to "#{a.title}", day_activity_path(day, a) %>
-                  [<% a.categories.each do |c| %>
-                  <%= c.name %><%=list_helper(c, a)%>
-                <% end %>]
+                  <% if !a.categories.empty? %>
+                    [<% a.categories.each do |c| %>
+                      <%= c.name %><%=list_helper(c, a)%>
+                    <% end %>]
+                  <% end %>
                 </li>
               </ul>
             <% end %>
