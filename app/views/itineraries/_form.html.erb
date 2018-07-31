@@ -13,17 +13,9 @@
     <%= f.date_field :dateend, class: "form-control" %>
   </div>
 </div>
-
-<div class="field">
-<h3>Add some pics!</h3>
-  <%= f.fields_for :images do |image| %>
-    <%= image.label :url,"Link:" %>
-    <%= image.text_field :url, placeholder: ".gif, .jpg, or .png" %><br>
-  <% end %>
-</div>
 <br>
 <div class="actions">
-  <%= f.submit "Create Trip", class: 'btn btn-sm btn-primary' %>
+  <%= f.submit "Create Trip", class: 'btn btn-lg btn-add' %>
 </div>
 
 <br>

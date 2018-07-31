@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-xs-3"></div>
     <div class="col-xs-5">
-      <div class="text-center">
+      <div class="show-trips text-center">
        <h2>Trips</h2><br>
         <% @user.itineraries.each do |i| %>
           <h4><%= link_to "#{show_date(i.datestart)} - #{i.trip_title}", user_itinerary_path(@user, i) %>
@@ -20,14 +20,16 @@
       </div>
     </div>
     <div class="col-xs-4 text-center">
-      <h4><strong>Upcoming Trips</strong></h4>
-      <% if @upcoming_trips %>
-          <% @upcoming_trips.each do |trip| %>
-            <%= link_to "#{show_date(trip.datestart)} - #{trip.trip_title}", user_itinerary_path(current_user, trip) %><br>
-          <% end %>
-      <% else %>
-        <p>You haven't made any plans yet!</p>
-      <% end %>
+      <div class="show-trips">
+        <h4><strong>Upcoming Trips</strong></h4>
+        <% if @upcoming_trips %>
+            <% @upcoming_trips.each do |trip| %>
+              <%= link_to "#{show_date(trip.datestart)} - #{trip.trip_title}", user_itinerary_path(current_user, trip) %><br>
+            <% end %>
+        <% else %>
+          <p>You haven't made any plans yet!</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

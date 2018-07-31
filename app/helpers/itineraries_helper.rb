@@ -10,7 +10,6 @@ module ItinerariesHelper
   def image_errors_if_exists
     if @errors[:images]
       @errors.delete(:images)
-      "<li>Image links need to be present with .gif/.jpg/.png format</li>".html_safe
     end
   end
 end

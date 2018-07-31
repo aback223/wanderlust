@@ -7,45 +7,53 @@
 
   <div class="row">
     <div class="col-xs-7">
-      <h2><%=@itinerary.trip_title%></h2>
-      <h5><strong>Trip Date:</strong> <%= show_date(@itinerary.datestart) %> - <%= show_date(@itinerary.dateend) %></h5>
-      <% if itinerary_belongs_to_user(current_user) %>
-        <%=link_to "Plan A Day", new_itinerary_day_path(@itinerary), class: "btn btn-sm btn-primary" %>
-        <%= link_to "Add More Images", new_itinerary_image_path(@itinerary), class: "btn btn-sm btn-primary" %>
-      <% end %>
-      <% if @days %>
-        <% @days.each do |day| %>
-          <h3><%= link_to "#{day.title} - #{show_date(day.date)}", itinerary_day_path(@itinerary, day) %></h3>
-          <% if itinerary_belongs_to_user(current_user) %>
-            <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_itinerary_day_path(@itinerary, day), class: "btn btn-sm" %><%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, itinerary_day_path(@itinerary, day), method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-sm" %><%= link_to '<i class="fas fa-plus plus-activity"></i>&nbsp;Add Activity'.html_safe, new_day_activity_path(day), class: "btn btn-sm" %>
-            <br><br>
-          <% end %>
-          <% day.activities.each do |a| %>
-            <ul>
-              <li>
-                <%= link_to "#{a.title}", day_activity_path(day, a) %>
-                [<% a.categories.each do |c| %>
-                <%= c.name %><%=list_helper(c, a)%>
-              <% end %>]
-              </li>
-            </ul>
+      <div class="day-list">
+        <h2><%=@itinerary.trip_title%></h2>
+        <h5><strong>Trip Date:</strong> <%= show_date(@itinerary.datestart) %> - <%= show_date(@itinerary.dateend) %></h5>
+        <% if itinerary_belongs_to_user(current_user) %>
+          <%=link_to "Plan A Day", new_itinerary_day_path(@itinerary), class: "btn btn-sm btn-danger" %>
+        <% end %>
+        <% if @days %>
+          <% @days.each do |day| %>
+            <h3><%= link_to "#{day.title} - #{show_date(day.date)}", itinerary_day_path(@itinerary, day) %></h3>
+            <% if itinerary_belongs_to_user(current_user) %>
+              <%=link_to '<i class="fas fa-edit"></i>&nbsp;Edit'.html_safe, edit_itinerary_day_path(@itinerary, day), class: "btn btn-sm" %><%= link_to '<i class="fas fa-trash-alt"></i>&nbsp;Delete'.html_safe, itinerary_day_path(@itinerary, day), method: :delete, data: {confirm: "Are you sure you want to delete?"}, class: "btn btn-sm" %><%= link_to '<i class="fas fa-plus plus-activity"></i>&nbsp;Add Activity'.html_safe, new_day_activity_path(day), class: "btn btn-sm" %>
+              <br><br>
+            <% end %>
+            <% day.activities.each do |a| %>
+              <ul>
+                <li>
+                  <%= link_to "#{a.title}", day_activity_path(day, a) %>
+                  [<% a.categories.each do |c| %>
+                  <%= c.name %><%=list_helper(c, a)%>
+                <% end %>]
+                </li>
+              </ul>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div><!--col-xs-7-->
 
     <div class="col-xs-5">
-      <h3>Images</h3>
-      <% if @itinerary.images %>
-        <% @itinerary.images.each do |image| %>
-          <div class="img-thumbnail text-right">
-            <% if itinerary_belongs_to_user(current_user) %>
-              <strong><%= link_to "Delete", itinerary_image_path(@itinerary, image), method: :delete, data: {confirm: "Are you sure?" } %></strong><br>
-            <% end %>
-            <%= link_to image_tag("#{image.url}", class: "pic-thumbnail"), image.url %>
-          </div>
+      <div class="image-list">
+        <h3>Images</h3>
+        <% if itinerary_belongs_to_user(current_user) %>
+          <%= link_to "Add More Images", new_itinerary_image_path(@itinerary), class: "btn btn-sm btn-danger" %><br><br>
         <% end %>
-      <% end %>
+        <% if @itinerary.images.empty? %>
+          <p>No images :(</p>
+        <% else %>
+          <% @itinerary.images.each do |image| %>
+            <div class="img-thumbnail text-right">
+              <% if itinerary_belongs_to_user(current_user) %>
+                <strong><%= link_to "Delete", itinerary_image_path(@itinerary, image), method: :delete, data: {confirm: "Are you sure?" } %></strong><br>
+              <% end %>
+              <%= link_to image_tag("#{image.url}", class: "pic-thumbnail"), image.url %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div> <!--col-xs-5-->
   </div> <!-- row -->
 

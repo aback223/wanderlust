@@ -1,7 +1,9 @@
-<div class="trip-container text-center">
-  <h2>New Trip</h2><br>
+<div class="main-container text-center">
+  <div class="trip-container text-center">
+    <h2>New Trip</h2><br>
 
-  <%= form_for(@itinerary, url: user_itineraries_path(current_user), method: :post) do |f| %>
-    <%= render partial: 'form', locals: { f: f } %>
-  <% end %>
+    <%= form_for(@itinerary, url: user_itineraries_path(current_user), method: :post) do |f| %>
+      <%= render partial: 'form', locals: { f: f } %>
+    <% end %>
+  </div>
 </div>

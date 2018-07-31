@@ -1,50 +1,52 @@
-<div class="form-container">
-  <h1 class="text-center">Register</h1><br>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="form-row">
-      <div class="form-group-lg col-md-6">
-        <%= f.text_field :firstname, placeholder: "First name", class: "form-control" %>
-      </div>
-      <div class="form-group-lg col-md-6">
-        <%= f.text_field :lastname, placeholder: "Last name", class: "form-control" %><br />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group-lg col-md-12">
-        <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class: "form-control" %><br />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group-lg col-md-12">
-        <% if @minimum_password_length %>
-          <%= f.password_field :password, autocomplete: "off", placeholder: "Password (#{@minimum_password_length} characters minimum)", class: "form-control" %>
-        <% end %><br />
-      </div>
-    </div>
+<div class="home-bg">
+  <div class="form-wrapper signup">
+    <div class="form-container register">
+      <h1 class="text-center">Register</h1><br>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-row">
+          <div class="form-group-lg col-md-6">
+            <%= f.text_field :firstname, placeholder: "First name", class: "form-control" %>
+          </div>
+          <div class="form-group-lg col-md-6">
+            <%= f.text_field :lastname, placeholder: "Last name", class: "form-control" %><br />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group-lg col-md-12">
+            <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class: "form-control" %><br />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group-lg col-md-12">
+            <% if @minimum_password_length %>
+              <%= f.password_field :password, autocomplete: "off", placeholder: "Password (#{@minimum_password_length} characters minimum)", class: "form-control" %>
+            <% end %><br />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="actions col-md-12">
+            <%= f.submit "Create Account", class: 'btn btn-lg btn-block' %>
+          </div>
+        </div>
+      <% end %>
 
-    <!--<div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div> -->
-    
-    <div class="form-row">
-      <div class="actions col-md-12">
-        <%= f.submit "Create Account", class: 'btn btn-primary btn-lg btn-block' %>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h3>or</h3>
+        </div>
       </div>
-    </div>
-  <% end %>
 
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h3>OR</h3>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <br>
-      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-sm btn-primary" %>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <br>
+          <p class="signup-question">
+            Already have an account?
+            <%= link_to "Sign In", login_path %>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

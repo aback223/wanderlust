@@ -1,7 +1,11 @@
-<div class="container text-center">
-<h2>Latest Updates</h2>
-<br>
-<% @itineraries.reverse.each do |i| %>
-<h4><%= link_to "#{i.trip_title} by: #{i.users[0].firstname} on #{show_date(i.created_at)}", itinerary_path(i)%></h4><br>
-<% end %>
+<div class="container text-center main-container">
+  <h2>Latest Updates</h2>
+  <br>
+  <% if @itineraries.empty? %>
+    <p>Nothing to see yet :(</p>
+  <% else %>
+    <% @itineraries.reverse.each do |i| %>
+    <h4><%= link_to "#{i.trip_title} by: #{i.users[0].firstname} on #{show_date(i.created_at)}", itinerary_path(i)%></h4><br>
+    <% end %>
+  <% end %>
 </div>

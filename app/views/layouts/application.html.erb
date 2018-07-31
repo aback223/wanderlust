@@ -3,11 +3,12 @@
   <head>
     <title>Wanderlust</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
 
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700|
+    Montserrat:400,600,700|Merriweather|Montserrat|Open+Sans|Roboto' rel='stylesheet' type='text/css'>
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
@@ -21,14 +22,19 @@
     <div class="container" style="padding-top:20px">
       <div class="row">
         <div class="col-xs-6 corner-logo-2">
-          <a href="/welcome">WANDERLUST</a>
+          <% if user_signed_in? %>
+            <a href="/welcome">WANDERLUST</a>
+          <% else %>
+            <a href="/">WANDERLUST</a>
+          <% end %> 
         </div>
         <div class="col-xs-6 signin text-right navbar-nav-2">
           <% if user_signed_in? %>
-
-            <%=link_to '<i class="fas fa-plus"></i> Add Trip'.html_safe, new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
-            <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            <div class="signedin-nav">
+              <%=link_to '<i class="fas fa-plus"></i> Add Trip'.html_safe, new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
+              <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            </div>
           <% else %>
              <%= link_to "Sign Up", register_path %>&nbsp; &nbsp;<%=link_to "Sign In", login_path %>
           <% end %>

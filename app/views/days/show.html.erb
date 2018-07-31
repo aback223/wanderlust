@@ -3,20 +3,22 @@
   <li class="breadcrumb-item in-active"><%= @day.title %></li>
 </ol>
 
-<h2><%= @day.title %> (<%= @day.date %>)</h2>
+<div class="main-container">
+  <h2><%= @day.title %> (<%= @day.date %>)</h2>
 
-<div class="dayActivities">
-  <% if @day.activities.empty? %>
-    Add some activities!
-  <% else %>
-    <% @day.activities.each do |a| %>
-      <ul>
-        <h3><%= a.title %></h3>
-        <li><strong>Activity Type: </strong><%= a.activity_type %></li>
-        <li><strong>Address: </strong><%= a.address %></li>
-        <li><strong>URL: </strong><%= a.url %></li>
-        <li><strong>Notes: </strong><%= a.notes %></li>
-      </ul>
+  <div class="dayActivities ">
+    <% if @day.activities.empty? %>
+      No activities :(
+    <% else %>
+      <% @day.activities.each do |a| %>
+        <ul>
+          <h3><%= a.title %></h3>
+          <li><strong>Activity Type: </strong><%= a.activity_type %></li>
+          <li><strong>Address: </strong><%= a.address %></li>
+          <li><strong>URL: </strong><%= a.url %></li>
+          <li><strong>Notes: </strong><%= a.notes %></li>
+        </ul>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

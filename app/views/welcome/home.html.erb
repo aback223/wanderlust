@@ -3,13 +3,14 @@
   <head>
     <title>Wanderlust</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,600,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
 
     <%= csrf_meta_tags %>
+    <!-- Fonts -->
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Pacifico|Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,600,700|Merriweather');
+    </style>
   </head>
 
   <body="page-top">
@@ -24,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-6 corner-logo">
-            <a href="/">WANDERLUST</a>
+            <a href="#"></a>
           </div>
           <% if user_signed_in? %>
             <div class="col-xs-6 signin text-right navbar-nav">
@@ -39,24 +40,20 @@
         
         <div class="row header-info">
           <div class="col-sm-10 col-sm-offset-1 text-center">
-            <h1 class="wow fadeIn homepage">Wanderlust</h1>
+            <h1 class="homepage">Wanderlust</h1>
             <br />
-            <p class="lead wow fadeIn" data-wow-delay="0.5s">Plan your trip now</p>
+            <p>Let's make it happen.</p>
             <br />
-              
             <div class="row">
               <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                <div class="row">
+                <div class="row header-btn">
                   <% if user_signed_in? %>
-                    <div class="col-xs-12 text-center wow fadeInUp" data-wow-delay="1.4s">
-                      <%= link_to "Get Started", user_path(current_user), :class => "btn btn-primary btn-lg"%>
+                    <div class="col-xs-12 text-center header-btn">
+                      <%= link_to "Get Started", user_path(current_user), :class => "btn btn-lg"%>
                     </div>
                   <% else %>
-                    <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                      <%= link_to "Learn More", "#", :class => "btn btn-secondary btn-lg"%>
-                    </div>
-                    <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                      <%= link_to "Get Started", register_path, :class => "btn btn-primary btn-lg"%>
+                    <div class="col-xs-6">
+                      <%= link_to "Get Started", register_path, :class => "btn btn-lg"%>
                     </div>
                   <% end %>
                 </div><!--End Button Row-->  
@@ -67,26 +64,5 @@
         </div>
       </div>
     </header>
-
-    <footer>
-      <div class="container">
-        
-        <div class="row">
-          <div class="col-sm-8 margin-20">
-            <ul class="list-inline social">
-              <li>Connect with us on</li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-          
-          <div class="col-sm-4 text-right">
-            <p><small>Copyright &copy; 2018. All rights reserved. <br></a></small></p>
-          </div>
-        </div>
-        
-      </div>
-    </footer>
   </body>
 </html>
