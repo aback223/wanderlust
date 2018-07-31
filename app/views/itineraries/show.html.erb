@@ -11,6 +11,7 @@
         <h2><%=@itinerary.trip_title%></h2>
         <h5><strong>Trip Date:</strong> <%= show_date(@itinerary.datestart) %> - <%= show_date(@itinerary.dateend) %></h5>
         <% if itinerary_belongs_to_user(current_user) %>
+          <%= link_to "Edit Title/Dates", edit_user_itinerary_path(current_user, @itinerary), class: "btn btn-sm btn-danger" %>
           <%=link_to "Plan A Day", new_itinerary_day_path(@itinerary), class: "btn btn-sm btn-danger" %>
         <% end %>
         <% if @days %>
