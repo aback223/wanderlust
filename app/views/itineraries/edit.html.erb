@@ -1,5 +1,5 @@
-<h2>Edit Trip</h2>
-<div class="edit-trip">
+<div class="form-container">
+  <h2>Edit Trip</h2>
   <%= form_for(@itinerary, url: user_itinerary_path(@user, @itinerary), method: :patch) do |f| %>
     <%= render partial: 'form', locals: { f: f } %>
   <% end %>
