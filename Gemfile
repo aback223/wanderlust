@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 ruby '2.3.3'
+gem 'sprockets', '~>3.7.2'
 gem 'cancancan', '~> 2.0'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
