@@ -250,3 +250,12 @@ p.signup-question {
 .breadcrumb {
   background-color: transparent;
 }
+
+.day-activities ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.day-activities {
+  text-align: center;
+}
