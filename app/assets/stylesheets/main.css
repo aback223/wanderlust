@@ -47,12 +47,10 @@ footer {
 }
 
 .intro-info {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
+  position: relative;
   margin-left: 0px;
   margin-top: 15%;
+  top: 42px;
 }
 
 .intro-info h1.homepage {
