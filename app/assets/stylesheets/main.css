@@ -58,7 +58,7 @@ footer {
 }
 
 .header-info h1.homepage {
-  color: white;
+  color: #2FCCFE;
   font-size: 100px;
   font-family:'Pacifico', cursive;
   font-weight: 400;
@@ -209,7 +209,7 @@ footer {
   padding: 20px;
   font-weight: 400;
   letter-spacing: 1px;
-  background-color: rgba(75, 15, 255, 1);
+  background-color: #2FCCFE;
   color: white!important;
 }
 
