@@ -33,9 +33,8 @@ body {
 }
 
 /* Home */
-header {
+.intro-body {
   background: url("intro-wallpaper.jpg") no-repeat center center;
-  width: 100%;
   padding: 20px 10px 60px 10px;
   height: 100vh;
   overflow: hidden;
@@ -47,7 +46,7 @@ footer {
   padding: 40px 0px;
 }
 
-.header-info {
+.intro-info {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -57,21 +56,21 @@ footer {
   margin-bottom: 15%;
 }
 
-.header-info h1.homepage {
+.intro-info h1.homepage {
   color: #2FCCFE;
   font-size: 100px;
   font-family:'Pacifico', cursive;
   font-weight: 400;
 }
 
-.header-info p {
+.intro-info p {
   font-family: 'Raleway', sans-serif;
   color: black;
   font-size: 25px;
   padding: 10px;
 }
 
-.row.header-btn {
+.row.intro-btn {
   display: flex;
   text-align: center;
   justify-content: center;
