@@ -48,12 +48,11 @@ footer {
 
 .intro-info {
   position: absolute;
-  bottom: 0;
   width: 100%;
   left: 0;
   right: 0;
   margin-left: 0px;
-  margin-bottom: 15%;
+  margin-top: 15%;
 }
 
 .intro-info h1.homepage {
@@ -203,13 +202,11 @@ footer {
 }
 
 .btn-lg {
-  font-size: 13px;
-  line-height: 1.33;
-  padding: 20px;
-  font-weight: 400;
+  font-size: 15px;
+  padding: 17px 35px;
   letter-spacing: 1px;
   background-color: #2FCCFE;
-  color: white!important;
+  color: white;
 }
 
 .btn-lg:hover {
