@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   get '/privacy', to: 'welcome#privacy'
 
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: 'register'
+    get 'login', to: 'devise/sessions#new', as: 'login'
+  end
+  
   resources :users, only: [:show] do
     resources :itineraries
   end
@@ -25,8 +30,4 @@ Rails.application.routes.draw do
 
   get '/welcome', to: 'itineraries#index', as: 'welcome'
 
-  devise_scope :user do
-    get 'register', to: 'devise/registrations#new', as: 'register'
-    get 'login', to: 'devise/sessions#new', as: 'login'
-  end
 end
