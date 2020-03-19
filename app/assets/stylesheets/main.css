@@ -14,14 +14,13 @@ h1 {
 
 a {
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
   color: black;
   font-size: 16px;
 }
 
 a:hover{
   text-decoration: none;
-  color: rgba(230, 0, 0, 1);
+  color: black;
 }
 
 p, .breadcrumb {
@@ -84,10 +83,6 @@ footer {
 
 .navbar-nav-2 a, .navbar-nav a {
   padding-left: 10px;
-}
-
-.navbar-nav-2 a:hover, .navbar-nav a:hover {
-  color: white;
 }
 
 /* Forms */
@@ -205,10 +200,11 @@ footer {
   letter-spacing: 1px;
   background-color: #2FCCFE;
   color: white;
+  transition: background-color  0.3s ease;
 }
 
 .btn-lg:hover {
-  background-color: rgba(110, 61, 255, 1);
+  background-color: #27BCEB;
   color: white;
 }
 
