@@ -27,7 +27,7 @@
             </div>
           <% else %>
             <div class="col-xs-6 signin text-right navbar-nav">
-              <%=link_to "Log In", "#logInModal", "data-toggle" => "modal" %>
+              <%=link_to "Log In", login_path %>
             </div>
           <% end %>
         </div>
@@ -57,7 +57,7 @@
     <!--Sign Up Modal --> 
     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content" id="signUpContent">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -103,63 +103,8 @@
                 <br>
                 <p class="signup-question">
                   Already have an account?
-                  <a href="#" onClick="switchToLogin">Log In</a>
+                  <%= link_to "Log In", login_path %>
                 </p>
-              </div>
-            </div>
-          </div><!-- form-container -->
-        </div>
-      </div>
-    </div>
-    <!--Log In Modal -->
-    <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h1>Log In</h1>
-          </div>
-          <div class="form-container login text-center">
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="form-row">
-                <div class="form-group-lg col-xs-12">
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", required: true %><br />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group-lg col-xs-12">
-                  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control", required: true %>
-                </div>
-              </div>
-              <% if devise_mapping.rememberable? -%>
-                <div class="field remember-field">
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me %>
-                </div><br />
-              <% end %>
-              <div class="form-row">
-                <div class="actions col-xs-12">
-                  <%= f.submit "Log in", class: "btn-large btn-block" %><br>
-                </div>
-              </div>
-            <% end %>
-            <div class="extra-links">
-              <p class="login-question">
-                Need an account?
-                <a href="#" onClick="switchToSignup">Sign Up</a>
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 text-center">
-                <h3>or</h3>
-              </div>
-            </div>
-            <div class="row">
-              <br />
-              <div class="col-xs-12 text-center">
-                <%= render "devise/shared/links" %>
               </div>
             </div>
           </div><!-- form-container -->
