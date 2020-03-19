@@ -135,7 +135,7 @@ footer {
   width: 500px;
   min-height: 550px;
   background: rgba(255, 255, 255, 0.80);
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   border-radius: 6px;
 }
 
@@ -297,6 +297,10 @@ form.new_user {
 p.signup-question, p.login-question {
   color: black;
   font-family: 'Raleway', sans-serif;
+}
+
+.signup-question {
+  margin-top: 20px;
 }
 
 .breadcrumb {

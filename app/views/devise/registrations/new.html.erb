@@ -27,24 +27,27 @@
         
         <div class="form-row">
           <div class="actions col-md-12">
-            <%= f.submit "Create Account", class: 'btn btn-lg btn-block' %>
+            <%= f.submit "Create Account", class: 'btn-large btn-block' %>
           </div>
         </div>
       <% end %>
-
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <p class="signup-question">
+            Already have an account?
+            <%= link_to "Sign In", login_path %>   
+          </p>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-12 text-center">
           <h3>or</h3>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <br>
-          <p class="signup-question">
-            Already have an account?
-            <%= link_to "Sign In", login_path %>
-          </p>
+      <div class="extra-links">
+        <div class="external-login">
+          <span class="icon"><%= image_tag('fb.png') %></span>
+          <span class="text"><%= render "devise/shared/links" %></span>
         </div>
       </div>
     </div>
