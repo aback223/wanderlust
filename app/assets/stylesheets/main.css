@@ -236,6 +236,27 @@ footer {
   color: #231f20;
 }
 
+/* Modal */
+
+.modal-dialog {
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+.modal-header {
+  border-bottom: none!important;
+}
+
+.modal-header h1 {
+  text-align: center;
+}
+
+.modal-content {
+  width: 500px;
+}
+
 /* Other */
 
 .remember-field label {
@@ -245,10 +266,6 @@ footer {
 p.signup-question {
   color: black;
   font-family: 'Raleway', sans-serif;
-}
-
-.signup-question a:hover {
-  color: red;
 }
 
 .breadcrumb {

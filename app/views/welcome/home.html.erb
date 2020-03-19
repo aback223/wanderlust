@@ -4,10 +4,10 @@
     <title>Wanderlust</title>
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <!-- Fonts -->
     <style>
@@ -15,7 +15,7 @@
     </style>
   </head>
 
-  <body class="intro-body">  
+  <body class="intro-body"> 
     <header>
       <div class="container">
         <div class="row">
@@ -55,20 +55,59 @@
       </div>
     </div>
     <!--Sign Up Modal --> 
-    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h1>Sign Up</h1>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <div class="form-container register">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="form-row">
+                <div class="form-group-lg col-md-6">
+                  <%= f.text_field :firstname, placeholder: "First name", class: "form-control", pattern: "[a-zA-Z]+", title: "Letters A-Z",  required: true %>
+                </div>
+                <div class="form-group-lg col-md-6">
+                  <%= f.text_field :lastname, placeholder: "Last name", class: "form-control", pattern: "[a-zA-Z]+", title: "Letters A-Z",  required: true %><br />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group-lg col-md-12">
+                  <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class: "form-control", pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$", title: "ex. johndoe@company.com", required: true %><br />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group-lg col-md-12">
+                  <% if @minimum_password_length %>
+                    <%= f.password_field :password, autocomplete: "off", placeholder: "Password (#{@minimum_password_length} characters minimum)", class: "form-control", pattern: "^.{6,}$", title: "Min of 6 characters", required: true %>
+                  <% end %><br />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="actions col-md-12">
+                  <%= f.submit "Create Account", class: 'btn-large btn-block' %>
+                </div>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <h3>or</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <br>
+                <p class="signup-question">
+                  Already have an account?
+                  <%= link_to "Sign In", login_path %>
+                </p>
+              </div>
+            </div>
+          </div><!-- form-container -->
         </div>
       </div>
     </div>
