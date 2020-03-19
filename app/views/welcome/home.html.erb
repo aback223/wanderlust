@@ -39,19 +39,37 @@
         <p>The world awaits. Start planning your trip today.</p>
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-            <div class="row intro-btn">
+            <div class="row intro-btn" style="margin-top: 10px;>
               <% if user_signed_in? %>
                 <div class="col-xs-12 text-center intro-btn">
-                  <%= link_to "Get Started", user_path(current_user), :class => "btn btn-lg"%>
+                  <%= link_to "Get Started", user_path(current_user), :class => "btn-large"%>
                 </div>
               <% else %>
                 <div class="col-xs-6">
-                  <%= link_to "Sign Up", "#signUpModal", :class => "btn btn-lg", "data-toggle" => "modal" %>
+                  <%= link_to "Sign Up", "#signUpModal", :class => "btn-large", "data-toggle" => "modal" %>
                 </div>
               <% end %>
             </div>  
           </div>
         </div> 
+      </div>
+    </div>
+    <!--Sign Up Modal --> 
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
