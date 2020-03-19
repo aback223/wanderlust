@@ -85,9 +85,9 @@ footer {
 
 .corner-logo, .corner-logo-2 a {
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
   font-size: 20px;
   letter-spacing: 1px;
+  color: black;
 }
 
 .navbar-nav-2 a, .navbar-nav a {
@@ -114,30 +114,43 @@ footer {
   display: block;
   margin: 0 auto;
   width: 60%;
+  margin-top: 30px;
 }
 
 .home-bg {
   background: url("intro-bg.jpg") no-repeat center center;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: -100;
+  background-size: cover;
   overflow: auto;
 }
 
 .form-wrapper {
   margin: 0 auto;
   margin-top: 100px;
-  width: 600px;
+  width: 500px;
   min-height: 550px;
-  background: rgba(255, 255, 255, 0.71);
+  background: rgba(255, 255, 255, 0.80);
   padding-bottom: 60px;
+  border-radius: 6px;
 }
 
 .form-wrapper.login {
   min-height: 500px;
+}
+
+form.new_user {
+  margin-top: 45px;
+}
+
+.extra-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* containers */
@@ -234,6 +247,24 @@ footer {
 .btn-secondary {
   background-color: #ffffff;
   color: #231f20;
+}
+
+.external-login {
+  background-color: #1877f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.external-login .text a {
+  color: white;
+}
+
+.external-login .text {
+  margin-left: 5px;
+}
+
+.external-login:hover {
+  background-color: #156CDD;
 }
 
 /* Modal */

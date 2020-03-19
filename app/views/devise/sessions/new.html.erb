@@ -2,7 +2,6 @@
   <div class="form-wrapper login">
     <div class="form-container login text-center">
       <h1>Log in</h1><br>
-
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-row">
           <div class="form-group-lg col-xs-12">
@@ -20,15 +19,29 @@
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div><br />
-        <% end -%>
+        <% end %>
 
         <div class="form-row">
           <div class="actions col-xs-12">
-            <%= f.submit "Log in", class: "btn btn-lg btn-block" %><br>
+            <%= f.submit "Log in", class: "btn-large btn-block" %><br>
           </div>
+          <p class="signup-question">
+            Need an account?
+            <%= link_to "Sign Up", register_path %>
+          </p>
         </div>
       <% end %>
-      <div class="extra-links"><%= render "devise/shared/links" %></div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h3 style="margin: 10px 0;">or</h3>
+        </div>
+      </div>
+      <div class="extra-links">
+        <div class="external-login">
+          <span class="icon"><%= image_tag('fb.png') %></span>
+          <span class="text"><%= render "devise/shared/links" %></span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
