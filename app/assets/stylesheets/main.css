@@ -43,7 +43,7 @@ footer {
 
 .intro-info h1.homepage {
   color: #2FCCFE;
-  font-size: 100px;
+  font-size: 135px;
   font-family:'Pacifico', cursive;
   font-weight: 400;
 }
@@ -53,6 +53,17 @@ footer {
   color: black;
   font-size: 25px;
   padding: 10px;
+}
+
+@media handheld, only screen and (max-width: 500px) {
+  .intro-info h1.homepage {
+    font-size: 87px;
+  }
+
+  .intro-info p {
+    font-size: 18px;
+  }
+
 }
 
 .row.intro-btn {
@@ -184,14 +195,11 @@ footer {
 
 /* Buttons */
 
-.btn {
+.btn-large {
   text-transform: uppercase;
   border-radius: 4px;
   border: none;
   font-family: 'Raleway', sans-serif;
-}
-
-a.btn-lg {
   font-size: 15px;
   padding: 15px 40px;
   letter-spacing: 1px;
@@ -200,7 +208,7 @@ a.btn-lg {
   transition: background-color  0.3s ease;
 }
 
-a.btn-lg:hover {
+.btn-large:hover {
   background-color: #27BCEB;
   color: white;
 }
