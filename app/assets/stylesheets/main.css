@@ -12,17 +12,6 @@ h1 {
   font-weight: 700;
 }
 
-a {
-  font-family: 'Raleway', sans-serif;
-  color: black;
-  font-size: 16px;
-}
-
-a:hover{
-  text-decoration: none;
-  color: black;
-}
-
 p, .breadcrumb {
   font-family: 'Open Sans', sans-serif;
 }
@@ -82,7 +71,15 @@ footer {
 }
 
 .navbar-nav-2 a, .navbar-nav a {
-  padding-left: 10px;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.navbar-nav a:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /* Forms */
@@ -194,16 +191,16 @@ footer {
   font-family: 'Raleway', sans-serif;
 }
 
-.btn-lg {
+a.btn-lg {
   font-size: 15px;
-  padding: 17px 35px;
+  padding: 15px 40px;
   letter-spacing: 1px;
   background-color: #2FCCFE;
   color: white;
   transition: background-color  0.3s ease;
 }
 
-.btn-lg:hover {
+a.btn-lg:hover {
   background-color: #27BCEB;
   color: white;
 }
