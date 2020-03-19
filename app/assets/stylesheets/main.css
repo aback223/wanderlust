@@ -20,6 +20,15 @@ body {
   background-color: rgba(219, 221, 255, 1);
 }
 
+a,  
+a:hover {
+  text-decoration: none!important;
+}
+
+a.btn-large:focus {
+  color: white!important;
+}
+
 /* Home */
 .intro-body {
   background: url("intro-wallpaper.jpg") no-repeat center center;
