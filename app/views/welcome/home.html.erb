@@ -103,7 +103,7 @@
                 <br>
                 <p class="signup-question">
                   Already have an account?
-                  <a href="#" onClick="switchToLogin">Sign In</a>
+                  <a href="#" onClick="switchToLogin">Log In</a>
                 </p>
               </div>
             </div>
@@ -145,7 +145,23 @@
                 </div>
               </div>
             <% end %>
-            <div class="extra-links"><%= render "devise/shared/links" %></div>
+            <div class="extra-links">
+              <p class="login-question">
+                Need an account?
+                <a href="#" onClick="switchToSignup">Sign Up</a>
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <h3>or</h3>
+              </div>
+            </div>
+            <div class="row">
+              <br />
+              <div class="col-xs-12 text-center">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
           </div><!-- form-container -->
         </div>
       </div>

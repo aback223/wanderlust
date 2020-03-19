@@ -263,7 +263,7 @@ footer {
   padding-top: 10px;
 }
 
-p.signup-question {
+p.signup-question, p.login-question {
   color: black;
   font-family: 'Raleway', sans-serif;
 }
