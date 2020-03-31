@@ -9,12 +9,23 @@
       <div class="show-trips text-left">
        <h2>Your Trips</h2><br>
         <% @user.itineraries.each do |i| %>
-          <h4><%= link_to "#{show_date(i.datestart)} - #{i.trip_title}", user_itinerary_path(@user, i) %>
+          <div class="row trip-row">
+            <div class="travel-img">
+              <%= image_tag("travel-placeholder.png") %>
+            </div>
+            <div class="col-xs-10">
+              <h4><%= link_to "#{i.trip_title}", user_itinerary_path(@user, i) %></h4>
+              <p><%= "#{show_date(i.datestart)} - #{show_date(i.dateend)}" %> </p>
+            </div>
             <% if current_user.itineraries.include?(i) %>
-              <strong><%= link_to '<i class="fas fa-times"></i>'.html_safe, user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></strong></h4>
+              <div class="col-xs-2 delete-trip">
+                <%= link_to '<i class="fas fa-times"></i>'.html_safe, user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+              </div>
             <% else %>
+              <br>
+            <% end %>
             <br>
-            <% end %><br>
+          </div>
         <% end %>
       </div>
     </div>

@@ -200,6 +200,25 @@ form.new_user {
   padding-bottom: 10px;
 }
 
+.trip-row {
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin: 0 !important;
+  display: flex;
+}
+
+.travel-img img {
+  margin: 3px 10px;
+  height: 60px;
+}
+
+.delete-trip {
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+  font-size: 20px;
+}
+
 .fa-times {
   color: red;
 }
