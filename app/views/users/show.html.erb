@@ -37,7 +37,7 @@
       <div class="show-trips">
         <h2>Upcoming Trips</h2><br>
         <div class="upcoming-trips">
-          <% if @upcoming_trips %>
+          <% if @upcoming_trips && @upcoming_trips.length != 0 %>
               <% @upcoming_trips.each do |trip| %>
                 <%= link_to "#{show_date(trip.datestart)} - #{trip.trip_title}", user_itinerary_path(current_user, trip) %><br>
               <% end %>
