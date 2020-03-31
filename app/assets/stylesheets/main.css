@@ -218,6 +218,14 @@ form.new_user {
   font-size: 20px;
 }
 
+.upcoming-trips {
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin-top: 35px;
+  min-height: 300px;
+  padding: 5px 20px;
+}
+
 .fa-times {
   color: red;
 }
