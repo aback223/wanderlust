@@ -224,11 +224,6 @@ form.new_user {
   margin-top: 35px;
   min-height: 300px;
   padding: 5px 20px;
-  text-align: center;
-}
-
-.upcoming-trips h4 {
-  text-align: left;
 }
 
 .fa-times {
