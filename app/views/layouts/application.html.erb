@@ -28,7 +28,7 @@
         <div class="col-xs-6 signin text-right navbar-nav-2">
           <% if user_signed_in? %>
             <div class="signedin-nav">
-              <%=link_to '<i class="fas fa-plus"></i> Add Trip'.html_safe, new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
+              <%=link_to '<i class="fas fa-plus" style="margin-right: 5px;"></i> Add Trip'.html_safe, new_user_itinerary_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
               <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;
               <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
             </div>
