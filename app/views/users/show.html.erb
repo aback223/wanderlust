@@ -5,10 +5,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-3"></div>
-    <div class="col-xs-5">
-      <div class="show-trips text-center">
-       <h2>Trips</h2><br>
+    <div class="col-xs-8">
+      <div class="show-trips text-left">
+       <h2>Your Trips</h2><br>
         <% @user.itineraries.each do |i| %>
           <h4><%= link_to "#{show_date(i.datestart)} - #{i.trip_title}", user_itinerary_path(@user, i) %>
             <% if current_user.itineraries.include?(i) %>
@@ -19,6 +18,7 @@
         <% end %>
       </div>
     </div>
+    <!-- <div class="col-xs-1"></div> -->
     <div class="col-xs-4 text-center">
       <div class="show-trips">
         <h4><strong>Upcoming Trips</strong></h4>
