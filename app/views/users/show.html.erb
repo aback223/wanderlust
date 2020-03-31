@@ -11,7 +11,11 @@
         <% @user.itineraries.each do |i| %>
           <div class="row trip-row">
             <div class="travel-img">
-              <%= image_tag("travel-placeholder.png") %>
+              <% if i.images.empty? %>
+                <%= image_tag("travel-placeholder.png") %>
+              <% else %>
+                <%= image_tag("#{i.images[0].url}") %>
+              <% end %>
             </div>
             <div class="col-xs-10">
               <h4><%= link_to "#{i.trip_title}", user_itinerary_path(@user, i) %></h4>
