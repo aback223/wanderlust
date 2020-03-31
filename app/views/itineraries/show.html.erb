@@ -4,9 +4,8 @@
 </ol>
 
 <div class="container">
-
-  <div class="row">
-    <div class="col-xs-7">
+  <div class="row removed-right-margin">
+    <div class="col-xs-7 removed-left-padding">
       <div class="day-list">
         <h2><%=@itinerary.trip_title%></h2>
         <h5><strong>Trip Date:</strong> <%= show_date(@itinerary.datestart) %> - <%= show_date(@itinerary.dateend) %></h5>
@@ -42,7 +41,7 @@
 
     <div class="col-xs-5">
       <div class="image-list">
-        <h3>Images</h3>
+        <h3>Album</h3>
         <% if itinerary_belongs_to_user(current_user) %>
           <%= link_to "Add More Images", new_itinerary_image_path(@itinerary), class: "btn btn-sm btn-danger" %><br><br>
         <% end %>

@@ -82,6 +82,18 @@ footer {
   justify-content: center;
 }
 
+.removed-right-margin {
+  margin-right: 0 !important;
+}
+
+.add-right-margin {
+  margin-right: 15px !important;
+}
+
+.removed-left-padding {
+  padding-left: 0 !important;
+}
+
 /* Nav */
 
 .corner-logo, .corner-logo-2 a {
@@ -179,7 +191,9 @@ form.new_user {
 }
 
 .day-list, .image-list {
-  background-color: rgba(255, 255, 255, 0.74);
+  /*background-color: rgba(255, 255, 255, 0.74);*/
+  background-color: #fbfbfb;
+  border-radius: 5px;
   width: 100%;
   padding: 10px 20px 20px 30px;
 }
@@ -198,8 +212,15 @@ form.new_user {
   background-color: transparent;
 }
 
+.trips-container {
+  background-color: #FBFBFB;
+  padding-bottom: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+
 .show-trips {
-  background-color: rgba(255, 255, 255, 0.74);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -210,6 +231,7 @@ form.new_user {
   margin: 0 !important;
   display: flex;
   padding: 10px 0 10px 15px;
+  background-color: white;
 }
 
 .travel-img img {
@@ -222,12 +244,15 @@ form.new_user {
   font-size: 20px;
 }
 
+.upcoming-trips-container {
+  margin-left: 45px;
+}
+
 .upcoming-trips {
+  background-color: white;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
-  margin-top: 35px;
-  min-height: 300px;
-  padding: 5px 20px;
+  padding: 20px;
 }
 
 .days-wrapper {
@@ -235,6 +260,7 @@ form.new_user {
   padding: 0 20px 10px 20px;
   margin-top: 20px;
   border-radius: 5px;
+  background-color: white;
 }
 
 .fa-times {

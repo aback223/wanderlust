@@ -4,9 +4,8 @@
 </ol>
 
 <div class="container">
-  <div class="row" style="margin-right: 0;">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-6">
+  <div class="row add-right-margin trips-container">
+    <div class="col-xs-6 your-trips-container">
       <div class="show-trips text-left">
        <h2>Your Trips</h2><br>
         <% @user.itineraries.each do |i| %>
@@ -30,20 +29,20 @@
         <% end %>
       </div>
     </div>
-    <div class="col-xs-1"></div>
-    <div class="col-xs-3">
-      <div class="show-trips upcoming-trips">
-        <h4><strong>Upcoming Trips</strong></h4><br>
-        <% if @upcoming_trips %>
-            <% @upcoming_trips.each do |trip| %>
-              <%= link_to "#{show_date(trip.datestart)} - #{trip.trip_title}", user_itinerary_path(current_user, trip) %><br>
-            <% end %>
-        <% else %>
-          <p>You haven't made any plans yet!</p>
-        <% end %>
+    <div class="col-xs-4 upcoming-trips-container">
+      <div class="show-trips">
+        <h2>Upcoming Trips</h2><br>
+        <div class="upcoming-trips">
+          <% if @upcoming_trips %>
+              <% @upcoming_trips.each do |trip| %>
+                <%= link_to "#{show_date(trip.datestart)} - #{trip.trip_title}", user_itinerary_path(current_user, trip) %><br>
+              <% end %>
+          <% else %>
+            <p>You haven't made any plans yet!</p>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="col-xs-1"></div>
   </div>
 </div>
 
