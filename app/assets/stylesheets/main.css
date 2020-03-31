@@ -230,6 +230,13 @@ form.new_user {
   padding: 5px 20px;
 }
 
+.days-wrapper {
+  border: 1px solid #CCCCCC;
+  padding: 0 20px 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
 .fa-times {
   color: red;
 }
