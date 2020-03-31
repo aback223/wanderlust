@@ -205,6 +205,7 @@ form.new_user {
   border-radius: 5px;
   margin: 0 !important;
   display: flex;
+  padding: 10px 0 10px 15px;
 }
 
 .travel-img img {
@@ -213,9 +214,7 @@ form.new_user {
 }
 
 .delete-trip {
-  display: flex;
-  justify-content: center;
-  margin: auto 0;
+  margin: auto 10px auto 0;
   font-size: 20px;
 }
 

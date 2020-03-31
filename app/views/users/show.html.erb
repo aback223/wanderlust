@@ -18,7 +18,7 @@
               <p><%= "#{show_date(i.datestart)} - #{show_date(i.dateend)}" %> </p>
             </div>
             <% if current_user.itineraries.include?(i) %>
-              <div class="col-xs-2 delete-trip">
+              <div class="col-xs-2 delete-trip text-right">
                 <%= link_to '<i class="fas fa-times"></i>'.html_safe, user_itinerary_path(@user, i), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
               </div>
             <% else %>
