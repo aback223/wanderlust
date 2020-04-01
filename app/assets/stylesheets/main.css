@@ -26,6 +26,14 @@ h1 {
   font-weight: 700;
 }
 
+.form-container h2 {
+  margin-bottom: 30px !important;
+}
+
+.form-container h5 {
+  margin-bottom: 30px;
+}
+
 p, .breadcrumb {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -215,7 +223,8 @@ form.new_user {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fbfbfb;
+  border-radius: 5px;
   width: 500px;
   padding: 10px 40px 40px 40px;
   text-align: center;

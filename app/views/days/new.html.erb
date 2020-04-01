@@ -1,7 +1,6 @@
 <div class="form-container text-center">
-  <h2>New Day</h2><br>
-  <h5>Add a title and date for a specific day during your trip</h5><br>
-
+  <h2>New Day</h2>
+  <h5>Add a title and date for a specific day during your trip</h5>
   <%= form_for @day, url: itinerary_days_path(@itinerary), method: :post do |f| %>
     <%= render partial: 'form', locals: { f: f } %>
   <% end %>
