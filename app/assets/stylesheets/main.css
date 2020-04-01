@@ -219,7 +219,7 @@ form.new_user {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
-  height: calc(100% - 91px);
+  /*height: calc(100% - 91px);*/
 }
 
 .trip-container {
