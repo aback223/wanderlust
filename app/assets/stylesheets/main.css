@@ -151,8 +151,6 @@ a.navbar-white,
   margin-top: 100px;
   width: 500px;
   min-height: 550px;
-  background: rgba(255, 255, 255, 0.80);
-  padding-bottom: 30px;
   border-radius: 6px;
 }
 
@@ -208,14 +206,10 @@ form.new_user {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(255, 255, 255, 0.74);
+  background-color: rgba(255, 255, 255, 1);
   width: 500px;
-  padding: 10px 40px 10px 40px;
+  padding: 10px 40px 40px 40px;
   text-align: center;
-}
-
-.form-container.register, .form-container.login {
-  background-color: transparent;
 }
 
 .trips-container {
