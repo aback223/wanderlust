@@ -130,6 +130,10 @@ footer {
   color: black;
 }
 
+.corner-logo-2 a:hover {
+  color: black;
+}
+
 .navbar-nav-2 a, .navbar-nav a {
   font-family: 'Raleway', sans-serif;
   color: black;
@@ -145,6 +149,10 @@ footer {
 a.navbar-white, 
 .navbar-white a {
   color: white;
+}
+
+.signedin-nav a:hover {
+  color: black;
 }
 
 /* Forms */
