@@ -4,7 +4,7 @@
 </ol>
 
 <div class="container content-wrapper">
-  <div class="row removed-right-margin">
+  <div class="row">
     <div class="col-xs-7 removed-left-padding">
       <div class="day-list">
         <h2><%=@itinerary.trip_title%></h2>
@@ -39,7 +39,7 @@
       </div>
     </div><!--col-xs-7-->
 
-    <div class="col-xs-5">
+    <div class="col-xs-5 removed-right-padding">
       <div class="image-list">
         <h3>Album</h3>
         <% if itinerary_belongs_to_user(current_user) %>

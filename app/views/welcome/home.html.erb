@@ -17,13 +17,13 @@
 
   <body class="intro-body"> 
     <header>
-      <div class="container welcome-nav">
+      <div class="welcome-nav">
         <div class="row">
           <div class="col-xs-6 corner-logo">
           </div>
           <% if user_signed_in? %>
             <div class="col-xs-6 signin text-right navbar-nav">
-              <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <%=link_to current_user.firstname, user_path(current_user) %>&nbsp; &nbsp;&nbsp; &nbsp;<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
             </div>
           <% else %>
             <div class="col-xs-6 signin text-right navbar-nav">

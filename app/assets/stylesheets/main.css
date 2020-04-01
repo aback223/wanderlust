@@ -112,6 +112,10 @@ footer {
   padding-left: 0 !important;
 }
 
+.removed-right-padding {
+  padding-right: 0 !important;
+}
+
 /* Nav */
 
 .corner-logo, .corner-logo-2 a {
@@ -186,16 +190,22 @@ form.new_user {
 .container {
   /*min-width: 1170px;*/
   height: calc(100vh - 121px);
+  /*padding: 30px;*/
+  margin: 0 !important;
+  width: 100% !important;
+  overflow: auto;
+  height: 100%;
 }
 
 .content-wrapper {
-  overflow: auto;
+  /*overflow: auto;*/
   padding-bottom: 50px;
 }
 
 .welcome-nav {
   min-width: 0;
   height: 0;
+  padding: 0 20px;
 }
 
 .main-container {
@@ -209,6 +219,7 @@ form.new_user {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
+  height: calc(100% - 91px);
 }
 
 .trip-container {
