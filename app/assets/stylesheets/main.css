@@ -1,5 +1,20 @@
 /* Global */
 
+html, body {
+  height: 100%;
+}
+
+body {
+  background: url("intro-bg.jpg") no-repeat center center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  overflow: auto;
+}
+
 h1, h2, h3, h4, h5, h6, .btn, .list-inline{
   font-family: 'Merriweather', serif;
 }
@@ -15,10 +30,6 @@ h1 {
 p, .breadcrumb {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
-}
-
-body {
-  background-color: rgba(219, 221, 255, 1);
 }
 
 a,  
@@ -115,6 +126,11 @@ footer {
   color: black;
 }
 
+a.navbar-white, 
+.navbar-white a {
+  color: white;
+}
+
 /* Forms */
 
 .form-control {
@@ -128,18 +144,6 @@ footer {
   margin: 0 auto;
   width: 60%;
   margin-top: 30px;
-}
-
-.home-bg {
-  background: url("intro-bg.jpg") no-repeat center center;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  background-size: cover;
-  overflow: auto;
 }
 
 .form-wrapper {
@@ -170,6 +174,7 @@ form.new_user {
 
 .container {
   min-width: 1170px;
+  height: 100%;
 }
 
 .main-container {
@@ -182,6 +187,7 @@ form.new_user {
   justify-content: center;
   text-align: center;
   padding: 10px;
+  height: calc(100% - 88px);
 }
 
 .trip-container {
@@ -218,6 +224,7 @@ form.new_user {
   border-radius: 5px;
   display: flex;
   justify-content: center;
+  height: calc(100% - 120px);
 }
 
 .show-trips {
@@ -225,10 +232,14 @@ form.new_user {
   padding-bottom: 10px;
 }
 
+.show-trips h1 {
+  margin-bottom: 60px;
+}
+
 .trip-row {
   border: 1px solid #CCCCCC;
   border-radius: 5px;
-  margin: 0 !important;
+  margin: 30px 0 0 0 !important;
   display: flex;
   padding: 10px 0 10px 15px;
   background-color: white;

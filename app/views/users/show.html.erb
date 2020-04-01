@@ -7,7 +7,7 @@
   <div class="row add-right-margin trips-container">
     <div class="col-xs-6 your-trips-container">
       <div class="show-trips text-left">
-       <h2>Your Trips</h2><br>
+       <h1 class="text-center">Your Trips</h1>
         <% @user.itineraries.each do |i| %>
           <div class="row trip-row">
             <div class="travel-img">
@@ -33,7 +33,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-xs-4 upcoming-trips-container">
+    <!-- <div class="col-xs-4 upcoming-trips-container">
       <div class="show-trips">
         <h2>Upcoming Trips</h2><br>
         <div class="upcoming-trips">
@@ -46,7 +46,7 @@
           <% end %>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
