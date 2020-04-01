@@ -48,6 +48,11 @@ a.btn-large:focus {
   color: white!important;
 }
 
+.breadcrumb {
+  margin-top: 20px;
+  background-color: transparent;
+}
+
 /* Home */
 .intro-body {
   background: url("intro-wallpaper.jpg") no-repeat center center;
@@ -222,7 +227,7 @@ form.new_user {
   /*height: calc(100% - 91px);*/
 }
 
-.trip-container {
+.add-trip-container {
   display: block;
   margin: 0 auto;
   width: 80%;
@@ -257,24 +262,6 @@ form.new_user {
   overflow: auto;
 }
 
-.show-trips {
-  padding-top: 10px;
-  padding-bottom: 50px;
-}
-
-.show-trips h1 {
-  margin: 30px 0;
-}
-
-.trip-row {
-  border: 1px solid #CCCCCC;
-  border-radius: 5px;
-  margin: 30px 0 0 0 !important;
-  display: flex;
-  padding: 10px 0 10px 15px;
-  background-color: white;
-}
-
 .travel-img img {
   margin: 3px 10px;
   height: 60px;
@@ -283,17 +270,6 @@ form.new_user {
 .delete-trip {
   margin: auto 10px auto 0;
   font-size: 20px;
-}
-
-.upcoming-trips-container {
-  margin-left: 45px;
-}
-
-.upcoming-trips {
-  background-color: white;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px;
-  padding: 20px;
 }
 
 .days-wrapper {
@@ -318,6 +294,26 @@ form.new_user {
 
 #error_explanation h2 {
   font-size: 20px;
+}
+
+/** Trips Page / User Show Page **/
+
+.show-trips {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.show-trips h1 {
+  margin: 30px 0;
+}
+
+.trip-row {
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin: 30px 0 0 0 !important;
+  display: flex;
+  padding: 10px 0 10px 15px;
+  background-color: white;
 }
 
 /* Buttons */
@@ -406,10 +402,6 @@ p.signup-question, p.login-question {
 
 .signup-question {
   margin-top: 20px;
-}
-
-.breadcrumb {
-  background-color: transparent;
 }
 
 .day-activities ul {
