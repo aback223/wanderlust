@@ -1,3 +1,8 @@
+<ol class="breadcrumb text-left">
+  <li class="breadcrumb-item active"><%= link_to @activity.day.itinerary.trip_title, itinerary_path(@activity.day.itinerary) %></li>
+  <li class="breadcrumb-item in-active">Edit Activity for <%= @activity.day.title %> - <%= show_date(@activity.day.date) %></li>
+</ol>
+
 <div class="form-container">
   <h2>Edit Activity</h2>
   <%= form_for @activity do |f| %>

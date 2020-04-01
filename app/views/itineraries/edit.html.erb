@@ -1,3 +1,8 @@
+<ol class="breadcrumb text-left">
+  <li class="breadcrumb-item active"><%= link_to @itinerary.trip_title, itinerary_path(@itinerary) %></li>
+  <li class="breadcrumb-item in-active">Edit Trip</li>
+</ol>
+
 <div class="form-container">
   <h2>Edit Trip</h2>
   <%= form_for(@itinerary, url: user_itinerary_path(@user, @itinerary), method: :patch) do |f| %>
