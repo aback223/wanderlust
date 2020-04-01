@@ -172,7 +172,7 @@ form.new_user {
 
 .container {
   min-width: 1170px;
-  height: 100%;
+  height: calc(100vh - 121px);
 }
 
 .main-container {
@@ -185,7 +185,6 @@ form.new_user {
   justify-content: center;
   text-align: center;
   padding: 10px;
-  height: calc(100% - 88px);
 }
 
 .trip-container {
@@ -218,7 +217,7 @@ form.new_user {
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  height: calc(100% - 120px);
+  height: calc(100% - 33px);
 }
 
 .show-trips {
