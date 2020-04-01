@@ -175,6 +175,12 @@ form.new_user {
   justify-content: center;
 }
 
+.form-container.register {
+  background-color: white;
+  margin-top: 0;
+  width: 497px;
+}
+
 /* containers */
 
 .container {
